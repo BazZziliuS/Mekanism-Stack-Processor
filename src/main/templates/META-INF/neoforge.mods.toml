@@ -1,0 +1,46 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="BazZziliuS"
+description='''
+Mekanism Stack Processor - batch processing for Mekanism machines.
+
+Machines process multiple items per operation based on tier:
+- Basic Factory: 8 items per operation
+- Advanced Factory: 16 items per operation
+- Elite Factory: 32 items per operation
+- Ultimate Factory: 64 items per operation (full stack!)
+- Regular machines: 4 items per operation
+
+All values configurable in config/mekanismstackprocessor-common.toml
+'''
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="[${neo_version},)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="mekanism"
+type="required"
+reason="This mod modifies Mekanism machines"
+versionRange="[10.7.0,)"
+ordering="AFTER"
+side="BOTH"

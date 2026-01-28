@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "org.cloudea.mekanismstackprocessor.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "mekanismstackprocessor.refmap.json",
+  "mixins": [
+    "ItemStackToItemStackFactoryMixin",
+    "CombiningFactoryMixin",
+    "ItemStackChemicalToItemStackFactoryMixin",
+    "SawingFactoryMixin",
+    "ElectricMachineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
