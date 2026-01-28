@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2025-01-28
+
+### Changed
+- Added support for newer NeoForge versions (21.1.0+)
+
 ## [1.0.0] - 2025-01-28
 
 ### Added
