@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2025-01-28
+
+### Changed
+- Updated Mekanism dependency to 10.7.17+
+- Speed upgrades now properly multiply with batch processing
+
 ## [1.0.2] - 2025-01-28
 
 ### Fixed
