@@ -5,6 +5,13 @@ on:
     tags:
       - 'v*'
 
+env:
+  MINECRAFT_VERSION: 1.21.1
+  JAVA_VERSION: 21
+  MOD_NAME: Mekanism Stack Processor
+  MODRINTH_ID: XXXXXXXX  # Замени на реальный ID проекта Modrinth
+  CURSEFORGE_ID: 000000  # Замени на реальный ID проекта CurseForge
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,10 +24,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup JDK 21
+      - name: Setup JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
       - name: Setup Gradle
@@ -36,28 +43,40 @@ jobs:
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+      - name: Publish to Modrinth & CurseForge
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
-          name: MekanismStackProcessor v${{ steps.get_version.outputs.VERSION }}
-          body: |
-            ## Mekanism Stack Processor v${{ steps.get_version.outputs.VERSION }}
+          # Modrinth
+          modrinth-id: ${{ env.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-featured: true
 
-            ### Requirements
-            - Minecraft 1.21.1
-            - NeoForge 21.1.218+
-            - Mekanism 10.7.9+
+          # CurseForge
+          curseforge-id: ${{ env.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-            ### Installation
-            1. Download the JAR file below
-            2. Place it in your `mods` folder
-            3. Make sure Mekanism is installed
-            4. Launch the game!
+          # GitHub
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-generate-changelog: true
 
-            ### Changes
-            See commit history for changes.
-          files: build/libs/*.jar
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Common
+          name: ${{ env.MOD_NAME }} v${{ steps.get_version.outputs.VERSION }}
+          version: ${{ steps.get_version.outputs.VERSION }}
+          version-type: release
+          changelog-file: CHANGELOG.md
+
+          loaders: |
+            neoforge
+          game-versions: |
+            ${{ env.MINECRAFT_VERSION }}
+
+          dependencies: |
+            mekanism(required){modrinth:mekanism}{curseforge:268560}
+
+          files: build/libs/!(*-sources).jar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MekanismStackProcessor-${{ steps.get_version.outputs.VERSION }}
+          path: build/libs/*.jar

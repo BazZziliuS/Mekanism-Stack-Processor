@@ -6,6 +6,9 @@
 [![Mekanism](https://img.shields.io/badge/Mekanism-10.7.9+-blue.svg)](https://github.com/mekanism/Mekanism)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+[![Modrinth](https://img.shields.io/modrinth/dt/XXXXXXXX?logo=modrinth&label=Modrinth&color=00AF5C)](https://modrinth.com/mod/mekanism-stack-processor)
+[![CurseForge](https://cf.way2muchnoise.eu/full_000000_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/mekanism-stack-processor)
+
 A NeoForge mod that adds **batch processing** to Mekanism machines. Instead of processing items one at a time, machines process multiple items per operation based on their tier.
 
 ## Features
