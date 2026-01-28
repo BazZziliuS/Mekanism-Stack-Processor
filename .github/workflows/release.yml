@@ -9,8 +9,6 @@ env:
   MINECRAFT_VERSION: 1.21.1
   JAVA_VERSION: 21
   MOD_NAME: Mekanism Stack Processor
-  MODRINTH_ID: mekanism-stack-processor
-  CURSEFORGE_ID: mekanism-stack-processor
 
 jobs:
   build:
@@ -47,12 +45,12 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           # Modrinth
-          modrinth-id: ${{ env.MODRINTH_ID }}
+          modrinth-id: ${{ secrets.MODRINTH_ID }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
 
           # CurseForge
-          curseforge-id: ${{ env.CURSEFORGE_ID }}
+          curseforge-id: ${{ secrets.CURSEFORGE_ID }}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # GitHub
