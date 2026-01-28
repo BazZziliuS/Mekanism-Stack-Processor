@@ -25,7 +25,7 @@ public abstract class ItemStackChemicalToItemStackFactoryMixin {
             TileEntityFactory<?> factory = (TileEntityFactory<?>) (Object) this;
             int multiplier = StackProcessorUtil.getFactoryMultiplier(factory.tier);
             if (multiplier > 1) {
-                cached.setBaselineMaxOperations(() -> multiplier);
+                cached.setBaselineMaxOperations(() -> StackProcessorUtil.getOperationsPerTick(factory) * multiplier);
             }
         }
     }

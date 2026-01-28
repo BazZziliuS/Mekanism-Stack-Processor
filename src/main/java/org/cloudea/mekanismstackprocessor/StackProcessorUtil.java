@@ -1,11 +1,19 @@
 package org.cloudea.mekanismstackprocessor;
 
 import mekanism.common.tier.FactoryTier;
+import mekanism.common.tile.factory.TileEntityFactory;
 
 /**
  * Утилитный класс для расчёта множителей обработки.
  */
 public class StackProcessorUtil {
+
+    /**
+     * Получает operationsPerTick из фабрики.
+     */
+    public static int getOperationsPerTick(TileEntityFactory<?> factory) {
+        return factory.getOperationsPerTick();
+    }
 
     /**
      * Возвращает множитель для указанного уровня фабрики.

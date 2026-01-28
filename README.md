@@ -3,7 +3,7 @@
 [![Build](https://github.com/BazZziliuS/Mekanism-Stack-Processor/actions/workflows/build.yml/badge.svg)](https://github.com/BazZziliuS/Mekanism-Stack-Processor/actions/workflows/build.yml)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-green.svg)](https://minecraft.net/)
 [![NeoForge](https://img.shields.io/badge/NeoForge-21.1.218-orange.svg)](https://neoforged.net/)
-[![Mekanism](https://img.shields.io/badge/Mekanism-10.7.9+-blue.svg)](https://github.com/mekanism/Mekanism)
+[![Mekanism](https://img.shields.io/badge/Mekanism-10.7.17+-blue.svg)](https://github.com/mekanism/Mekanism)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [![Modrinth](https://img.shields.io/modrinth/dt/mekanism-stack-processor?logo=modrinth&label=Modrinth&color=00AF5C)](https://modrinth.com/mod/mekanism-stack-processor)
@@ -31,8 +31,8 @@ A NeoForge mod that adds **batch processing** to Mekanism machines. Instead of p
 ## Requirements
 
 - Minecraft 1.21.1
-- NeoForge 21.1.218+
-- Mekanism 10.7.9+
+- NeoForge 21.1.0+
+- Mekanism 10.7.17+
 
 ## Installation
 

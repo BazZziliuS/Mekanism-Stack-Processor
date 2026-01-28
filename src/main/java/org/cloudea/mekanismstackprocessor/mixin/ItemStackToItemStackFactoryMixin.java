@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * Mixin для фабрик ItemStack -> ItemStack (Crushing, Enriching, Smelting).
- * Добавляет batch processing - обработку нескольких предметов за раз.
  */
 @Mixin(value = TileEntityItemStackToItemStackFactory.class, remap = false)
 public abstract class ItemStackToItemStackFactoryMixin {
@@ -23,11 +22,10 @@ public abstract class ItemStackToItemStackFactoryMixin {
                                     CallbackInfoReturnable<CachedRecipe<ItemStackToItemStackRecipe>> cir) {
         CachedRecipe<ItemStackToItemStackRecipe> cached = cir.getReturnValue();
         if (cached != null) {
-            // Получаем tier из родительского класса через приведение типов
             TileEntityFactory<?> factory = (TileEntityFactory<?>) (Object) this;
             int multiplier = StackProcessorUtil.getFactoryMultiplier(factory.tier);
             if (multiplier > 1) {
-                cached.setBaselineMaxOperations(() -> multiplier);
+                cached.setBaselineMaxOperations(() -> StackProcessorUtil.getOperationsPerTick(factory) * multiplier);
             }
         }
     }
