@@ -9,8 +9,8 @@ env:
   MINECRAFT_VERSION: 1.21.1
   JAVA_VERSION: 21
   MOD_NAME: Mekanism Stack Processor
-  MODRINTH_ID: XXXXXXXX  # Замени на реальный ID проекта Modrinth
-  CURSEFORGE_ID: 000000  # Замени на реальный ID проекта CurseForge
+  MODRINTH_ID: mekanism-stack-processor
+  CURSEFORGE_ID: mekanism-stack-processor
 
 jobs:
   build:
