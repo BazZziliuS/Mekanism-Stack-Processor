@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2025-01-28
+
+### Fixed
+- Fixed speed upgrades breaking batch processing multiplier
+
 ## [1.0.1] - 2025-01-28
 
 ### Changed

@@ -23,6 +23,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev/"
     }
+    maven {
+        name = "CurseMaven"
+        url = "https://cursemaven.com"
+    }
 }
 
 base {
@@ -119,6 +123,8 @@ dependencies {
     // Mekanism dependency
     compileOnly "mekanism:Mekanism:${mekanism_version}"
     localRuntime "mekanism:Mekanism:${mekanism_version}"
+    // JEI
+    implementation "curse.maven:jei-238222:7420587"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
