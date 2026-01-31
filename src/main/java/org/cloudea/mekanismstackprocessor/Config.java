@@ -17,6 +17,12 @@ public class Config {
     // Regular machines multiplier
     public static final ModConfigSpec.IntValue baseMachineMultiplier;
 
+    // Chemical Factory tier multipliers (for gas/fluid factories from MoreMachine)
+    public static final ModConfigSpec.IntValue chemBasicTierMultiplier;
+    public static final ModConfigSpec.IntValue chemAdvancedTierMultiplier;
+    public static final ModConfigSpec.IntValue chemEliteTierMultiplier;
+    public static final ModConfigSpec.IntValue chemUltimateTierMultiplier;
+
     static {
         BUILDER.comment("Mekanism Stack Processor Configuration").push("general");
 
@@ -54,6 +60,28 @@ public class Config {
         baseMachineMultiplier = BUILDER
                 .comment("Items per operation for regular machines")
                 .defineInRange("baseMachineMultiplier", 4, 1, 64);
+
+        BUILDER.pop();
+
+        BUILDER.comment("Chemical Factory Tier Multipliers (MoreMachine mekaf)",
+                "For factories that process gases/fluids like Dissolving, Liquefying, etc.",
+                "Higher tier = more chemicals processed at once.").push("chemical_factory_tiers");
+
+        chemBasicTierMultiplier = BUILDER
+                .comment("Basic Chemical Factory - operations per tick multiplier")
+                .defineInRange("chemBasicTierMultiplier", 8, 1, 64);
+
+        chemAdvancedTierMultiplier = BUILDER
+                .comment("Advanced Chemical Factory - operations per tick multiplier")
+                .defineInRange("chemAdvancedTierMultiplier", 16, 1, 64);
+
+        chemEliteTierMultiplier = BUILDER
+                .comment("Elite Chemical Factory - operations per tick multiplier")
+                .defineInRange("chemEliteTierMultiplier", 32, 1, 64);
+
+        chemUltimateTierMultiplier = BUILDER
+                .comment("Ultimate Chemical Factory - operations per tick multiplier")
+                .defineInRange("chemUltimateTierMultiplier", 64, 1, 64);
 
         BUILDER.pop();
 

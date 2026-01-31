@@ -1,11 +1,14 @@
-## [1.1.0] - 2025-02-01
+## [1.2.0] - 2025-02-01
 
 ### Added
-- Optional integration with Mekanism:MoreMachine (mekmm)
-- Batch processing support for MoreMachine factories:
-  - ItemStack to ItemStack Factory (Lathe, Rolling Mill)
-  - Recycling Factory
-  - Stamping Factory
-  - Planting Factory
-  - Replicating Factory
-- Automatic detection: works without MoreMachine, enables features when present
+- Support for MoreMachine Advanced Factories (mekaf module):
+  - Liquefying Factory
+  - Dissolving Factory
+  - Oxidizing Factory
+  - Crystallizing Factory
+  - Washing Factory
+  - Centrifuging Factory
+  - Chemical Infusing Factory
+  - Pressurized Reacting Factory
+  - Solar Neutron Activating Factory
+- Separate config section for chemical factories (gas/fluid processing)

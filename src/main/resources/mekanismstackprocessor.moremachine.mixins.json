@@ -10,7 +10,16 @@
     "RecyclingFactoryMixin",
     "StampingFactoryMixin",
     "PlantingFactoryMixin",
-    "ReplicatingFactoryMixin"
+    "ReplicatingFactoryMixin",
+    "mekaf.LiquifyingFactoryMixin",
+    "mekaf.DissolvingFactoryMixin",
+    "mekaf.OxidizingFactoryMixin",
+    "mekaf.CrystallizingFactoryMixin",
+    "mekaf.WashingFactoryMixin",
+    "mekaf.CentrifugingFactoryMixin",
+    "mekaf.ChemicalInfusingFactoryMixin",
+    "mekaf.PressurizedReactingFactoryMixin",
+    "mekaf.SolarNeutronActivatingFactoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

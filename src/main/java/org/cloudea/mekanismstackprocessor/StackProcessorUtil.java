@@ -39,4 +39,19 @@ public class StackProcessorUtil {
         }
         return Config.baseMachineMultiplier.get();
     }
+
+    /**
+     * Возвращает множитель для химических фабрик (газы/жидкости) из MoreMachine mekaf.
+     */
+    public static int getChemicalFactoryMultiplier(FactoryTier tier) {
+        if (!Config.enableOptimization.get()) {
+            return 1;
+        }
+        return switch (tier) {
+            case BASIC -> Config.chemBasicTierMultiplier.get();
+            case ADVANCED -> Config.chemAdvancedTierMultiplier.get();
+            case ELITE -> Config.chemEliteTierMultiplier.get();
+            case ULTIMATE -> Config.chemUltimateTierMultiplier.get();
+        };
+    }
 }

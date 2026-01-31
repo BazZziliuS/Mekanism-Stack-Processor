@@ -127,7 +127,7 @@ dependencies {
     implementation "curse.maven:jei-238222:7420587"
     // MoreMachine optional dependency
     compileOnly "curse.maven:mekanism-more-machine-1275257:7498280"
-    // localRuntime "curse.maven:mekanism-more-machine-1275257:7498280"
+    localRuntime "curse.maven:mekanism-more-machine-1275257:7498280"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
