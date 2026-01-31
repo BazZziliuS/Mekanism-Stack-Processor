@@ -17,11 +17,17 @@ Machines process multiple items per operation based on tier:
 - Ultimate Factory: 64 items per operation (full stack!)
 - Regular machines: 4 items per operation
 
+Optional integration with Mekanism:MoreMachine (mekmm) - if installed,
+MoreMachine factories will also get batch processing support.
+
 All values configurable in config/mekanismstackprocessor-common.toml
 '''
 
 [[mixins]]
 config="${mod_id}.mixins.json"
+
+[[mixins]]
+config="${mod_id}.moremachine.mixins.json"
 
 [[dependencies.${mod_id}]]
 modId="neoforge"
@@ -42,5 +48,13 @@ modId="mekanism"
 type="required"
 reason="This mod modifies Mekanism machines"
 versionRange="[10.7.17,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="mekmm"
+type="optional"
+reason="Optional integration for MoreMachine factories batch processing"
+versionRange="[1.0.0,)"
 ordering="AFTER"
 side="BOTH"

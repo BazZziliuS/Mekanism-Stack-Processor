@@ -61,7 +61,7 @@ jobs:
           name: ${{ env.MOD_NAME }} v${{ steps.get_version.outputs.VERSION }}
           version: ${{ steps.get_version.outputs.VERSION }}
           version-type: release
-          changelog-file: CHANGELOG.md
+          changelog-file: LATEST_CHANGELOG.md
 
           loaders: |
             neoforge
@@ -70,6 +70,7 @@ jobs:
 
           dependencies: |
             mekanism(required){modrinth:mekanism}{curseforge:268560}
+            mekmm(optional){modrinth:mekanismmoremachine}{curseforge:1275257}
 
           files: build/libs/!(*-sources).jar
 

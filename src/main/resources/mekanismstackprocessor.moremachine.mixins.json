@@ -1,0 +1,18 @@
+{
+  "required": false,
+  "minVersion": "0.8.5",
+  "package": "org.cloudea.mekanismstackprocessor.mixin.moremachine",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "mekanismstackprocessor.refmap.json",
+  "plugin": "org.cloudea.mekanismstackprocessor.mixin.MoreMachineMixinPlugin",
+  "mixins": [
+    "MoreMachineItemStackToItemStackFactoryMixin",
+    "RecyclingFactoryMixin",
+    "StampingFactoryMixin",
+    "PlantingFactoryMixin",
+    "ReplicatingFactoryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
