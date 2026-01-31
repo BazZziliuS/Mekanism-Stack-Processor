@@ -12,3 +12,6 @@
   - Pressurized Reacting Factory
   - Solar Neutron Activating Factory
 - Separate config section for chemical factories (gas/fluid processing)
+
+### Changed
+- Mekanism chemical factories (Injecting, Infusing, Purifying) now use chemical_factory_tiers config

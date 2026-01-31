@@ -17,6 +17,9 @@ All notable changes to this project will be documented in this file.
   - Solar Neutron Activating Factory
 - Separate config section for chemical factories (gas/fluid processing)
 
+### Changed
+- Mekanism chemical factories (Injecting, Infusing, Purifying) now use chemical_factory_tiers config
+
 ## [1.1.0] - 2025-02-01
 
 ### Added

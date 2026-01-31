@@ -63,25 +63,27 @@ public class Config {
 
         BUILDER.pop();
 
-        BUILDER.comment("Chemical Factory Tier Multipliers (MoreMachine mekaf)",
-                "For factories that process gases/fluids like Dissolving, Liquefying, etc.",
+        BUILDER.comment("Chemical Factory Tier Multipliers",
+                "For factories that process gases/fluids:",
+                "- Mekanism: Injecting, Infusing, Purifying factories",
+                "- MoreMachine mekaf: Dissolving, Liquefying, Oxidizing, etc.",
                 "Higher tier = more chemicals processed at once.").push("chemical_factory_tiers");
 
         chemBasicTierMultiplier = BUILDER
                 .comment("Basic Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemBasicTierMultiplier", 8, 1, 64);
+                .defineInRange("chemBasicTierMultiplier", 1, 1, 64);
 
         chemAdvancedTierMultiplier = BUILDER
                 .comment("Advanced Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemAdvancedTierMultiplier", 16, 1, 64);
+                .defineInRange("chemAdvancedTierMultiplier", 4, 1, 64);
 
         chemEliteTierMultiplier = BUILDER
                 .comment("Elite Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemEliteTierMultiplier", 32, 1, 64);
+                .defineInRange("chemEliteTierMultiplier", 8, 1, 64);
 
         chemUltimateTierMultiplier = BUILDER
                 .comment("Ultimate Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemUltimateTierMultiplier", 64, 1, 64);
+                .defineInRange("chemUltimateTierMultiplier", 16, 1, 64);
 
         BUILDER.pop();
 

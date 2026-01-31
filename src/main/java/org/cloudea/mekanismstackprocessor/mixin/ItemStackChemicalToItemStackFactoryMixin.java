@@ -23,7 +23,7 @@ public abstract class ItemStackChemicalToItemStackFactoryMixin {
         CachedRecipe<ItemStackChemicalToItemStackRecipe> cached = cir.getReturnValue();
         if (cached != null) {
             TileEntityFactory<?> factory = (TileEntityFactory<?>) (Object) this;
-            int multiplier = StackProcessorUtil.getFactoryMultiplier(factory.tier);
+            int multiplier = StackProcessorUtil.getChemicalFactoryMultiplier(factory.tier);
             if (multiplier > 1) {
                 cached.setBaselineMaxOperations(() -> StackProcessorUtil.getOperationsPerTick(factory) * multiplier);
             }
