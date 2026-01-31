@@ -17,29 +17,67 @@ A NeoForge mod that adds **batch processing** to Mekanism machines. Instead of p
 - **Configurable multipliers** - Adjust items per operation for each tier
 - **Works with all factory types** - Crushing, Enriching, Smelting, Combining, Sawing, Injecting, Infusing, Purifying
 - **Regular machines support** - Non-factory machines also get batch processing
+- **Optional MoreMachine integration** - Full support for Mekanism:MoreMachine mod
+
+## Supported Machines
+
+### Mekanism (Required)
+| Factory Type | Config Section |
+|--------------|----------------|
+| Crushing, Enriching, Smelting | `factory_tiers` |
+| Combining Factory | `factory_tiers` |
+| Sawing Factory | `factory_tiers` |
+| Injecting, Infusing, Purifying | `chemical_factory_tiers` |
+| Regular Machines | `regular_machines` |
+
+### Mekanism:MoreMachine (Optional)
+If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-more-machine) is installed, the following factories are also supported:
+
+**mekmm module** (uses `factory_tiers`):
+- Lathe, Rolling Mill, Recycling, Stamping, Planting, Replicating factories
+
+**mekaf module** (uses `chemical_factory_tiers`):
+- Liquefying, Dissolving, Oxidizing, Crystallizing, Washing
+- Centrifuging, Chemical Infusing, Pressurized Reacting
+- Solar Neutron Activating factories
 
 ## Default Configuration
 
-| Machine Type | Items per Operation |
-|--------------|---------------------|
-| Basic Factory | 8 |
-| Advanced Factory | 16 |
-| Elite Factory | 32 |
-| Ultimate Factory | 64 (full stack!) |
-| Regular Machines | 4 |
+### Item Factories (`factory_tiers`)
+| Tier | Items per Operation |
+|------|---------------------|
+| Basic | 8 |
+| Advanced | 16 |
+| Elite | 32 |
+| Ultimate | 64 |
+
+### Chemical Factories (`chemical_factory_tiers`)
+| Tier | Operations Multiplier |
+|------|----------------------|
+| Basic | 1 |
+| Advanced | 4 |
+| Elite | 8 |
+| Ultimate | 16 |
+
+### Regular Machines
+| Type | Items per Operation |
+|------|---------------------|
+| Non-factory machines | 4 |
 
 ## Requirements
 
 - Minecraft 1.21.1
 - NeoForge 21.1.0+
 - Mekanism 10.7.17+
+- Mekanism:MoreMachine (optional)
 
 ## Installation
 
 1. Download the latest release from [Releases](https://github.com/BazZziliuS/Mekanism-Stack-Processor/releases)
 2. Place the JAR file in your `mods` folder
 3. Make sure Mekanism is installed
-4. Launch the game!
+4. (Optional) Install Mekanism:MoreMachine for extended support
+5. Launch the game!
 
 ## Configuration
 
@@ -48,12 +86,22 @@ Configuration file is located at:
 config/mekanismstackprocessor-common.toml
 ```
 
-You can adjust:
+### General
 - `enableOptimization` - Enable/disable the mod
+
+### Factory Tiers (item processing)
 - `basicTierMultiplier` - Items per operation for Basic Factory
 - `advancedTierMultiplier` - Items per operation for Advanced Factory
 - `eliteTierMultiplier` - Items per operation for Elite Factory
 - `ultimateTierMultiplier` - Items per operation for Ultimate Factory
+
+### Chemical Factory Tiers (gas/fluid processing)
+- `chemBasicTierMultiplier` - Multiplier for Basic Chemical Factory
+- `chemAdvancedTierMultiplier` - Multiplier for Advanced Chemical Factory
+- `chemEliteTierMultiplier` - Multiplier for Elite Chemical Factory
+- `chemUltimateTierMultiplier` - Multiplier for Ultimate Chemical Factory
+
+### Regular Machines
 - `baseMachineMultiplier` - Items per operation for regular machines
 
 ## Building from Source
@@ -75,3 +123,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Author:** BazZziliuS
 - **Mekanism Team** for the amazing tech mod
 - **NeoForge Team** for the modding platform
+- **MoreMachine Team** for the extended machines
