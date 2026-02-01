@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord Support
+    url: https://discord.gg/your-discord
+    about: Get help on our Discord server
+  - name: Mekanism Wiki
+    url: https://wiki.aidancbrady.com/wiki/Mekanism
+    about: Check Mekanism documentation first
+  - name: CurseForge Comments
+    url: https://www.curseforge.com/minecraft/mc-mods/mekanism-stack-processor
+    about: Leave a comment on CurseForge

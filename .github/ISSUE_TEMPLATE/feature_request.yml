@@ -1,0 +1,58 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please fill out the form below.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: A clear description of the feature you'd like to see
+      placeholder: I would like to see...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Why do you need this feature? What problem does it solve?
+      placeholder: This would help with...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How do you think this could be implemented?
+      placeholder: It could work by...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve my experience
+        - High - Really need this
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to make sure this is not a duplicate
+          required: true
+        - label: I am using the latest version of the mod
+          required: true

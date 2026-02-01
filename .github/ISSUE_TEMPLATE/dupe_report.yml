@@ -1,0 +1,83 @@
+name: Dupe/Exploit Report
+description: Report an item duplication bug or exploit
+title: "[Dupe]: "
+labels: ["bug", "dupe", "priority-high"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **IMPORTANT:** Dupe bugs are high priority and will be addressed quickly.
+        Please provide detailed reproduction steps so we can fix this ASAP.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Dupe Description
+      description: What items can be duplicated and how?
+      placeholder: Items can be duplicated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Exact steps to reproduce the dupe
+      placeholder: |
+        1. Set up machine X
+        2. Insert items
+        3. Do action Y
+        4. Items are duplicated
+    validations:
+      required: true
+
+  - type: textarea
+    id: machines
+    attributes:
+      label: Affected Machines
+      description: Which machines are affected?
+      placeholder: |
+        - Elite Factory
+        - Crusher
+        - etc.
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod Version
+      placeholder: "1.2.0"
+    validations:
+      required: true
+
+  - type: input
+    id: mc-version
+    attributes:
+      label: Minecraft Version
+      placeholder: "1.21.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How easy is this to exploit?
+      options:
+        - Low - Requires specific setup
+        - Medium - Somewhat easy to reproduce
+        - High - Very easy to exploit
+        - Critical - Automatic/passive dupe
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have verified this dupe is caused by this mod (not Mekanism itself)
+          required: true
+        - label: I am using the latest version of the mod
+          required: true

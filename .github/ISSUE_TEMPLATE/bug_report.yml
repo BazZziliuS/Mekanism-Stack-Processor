@@ -1,0 +1,114 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the form below to help us fix it.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: When I do X, Y happens instead of Z...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Place a machine
+        2. Add items
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: The machine should process items...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Instead, the machine...
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod Version
+      description: Which version of MekanismStackProcessor are you using?
+      placeholder: "1.2.0"
+    validations:
+      required: true
+
+  - type: input
+    id: mc-version
+    attributes:
+      label: Minecraft Version
+      placeholder: "1.21.1"
+    validations:
+      required: true
+
+  - type: input
+    id: mekanism-version
+    attributes:
+      label: Mekanism Version
+      placeholder: "10.7.17"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: moremachine
+    attributes:
+      label: MoreMachine Installed?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+
+  - type: textarea
+    id: other-mods
+    attributes:
+      label: Other Mods
+      description: List other mods that might be related to this issue
+      placeholder: |
+        - JEI
+        - AE2
+        - etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log File
+      description: Paste relevant parts of latest.log or link to full log (use pastebin/gist)
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to make sure this is not a duplicate
+          required: true
+        - label: I am using the latest version of the mod
+          required: true
