@@ -58,11 +58,7 @@ public class MoreMachineMixinPlugin implements IMixinConfigPlugin {
     }
 
     private static boolean isClassPresent(String className) {
-        try {
-            Class.forName(className, false, MoreMachineMixinPlugin.class.getClassLoader());
-            return true;
-        } catch (ClassNotFoundException e) {
-            return false;
-        }
+        String resourcePath = className.replace('.', '/') + ".class";
+        return MoreMachineMixinPlugin.class.getClassLoader().getResource(resourcePath) != null;
     }
 }

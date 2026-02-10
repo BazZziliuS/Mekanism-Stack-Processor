@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "refmap": "mekanismstackprocessor.refmap.json",
   "plugin": "org.cloudea.mekanismstackprocessor.mixin.MoreMachineMixinPlugin",
+  "priority": 1500,
   "mixins": [
     "MoreMachineItemStackToItemStackFactoryMixin",
     "RecyclingFactoryMixin",

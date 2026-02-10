@@ -4,6 +4,7 @@
   "package": "org.cloudea.mekanismstackprocessor.mixin",
   "compatibilityLevel": "JAVA_21",
   "refmap": "mekanismstackprocessor.refmap.json",
+  "priority": 1500,
   "mixins": [
     "ItemStackToItemStackFactoryMixin",
     "CombiningFactoryMixin",

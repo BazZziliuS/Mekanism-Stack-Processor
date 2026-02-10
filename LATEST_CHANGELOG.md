@@ -1,17 +1,7 @@
-## [1.2.0] - 2025-02-01
+## [1.2.1] - 2025-02-10
 
-### Added
-- Support for MoreMachine Advanced Factories (mekaf module):
-  - Liquefying Factory
-  - Dissolving Factory
-  - Oxidizing Factory
-  - Crystallizing Factory
-  - Washing Factory
-  - Centrifuging Factory
-  - Chemical Infusing Factory
-  - Pressurized Reacting Factory
-  - Solar Neutron Activating Factory
-- Separate config section for chemical factories (gas/fluid processing)
-
-### Changed
-- Mekanism chemical factories (Injecting, Infusing, Purifying) now use chemical_factory_tiers config
+### Fixed
+- Fixed crash on startup with 300+ mods caused by premature BlockEntity class loading
+  - Replaced `Class.forName()` with `ClassLoader.getResource()` in MoreMachineMixinPlugin to avoid cascading class hierarchy resolution
+  - Resolves incompatibility with Collective, Data Anchor, EntityCulling, Sodium, and other mods that add BlockEntity mixins
+- Added mixin config priority (1500) to both mixin JSON configs for additional safety
