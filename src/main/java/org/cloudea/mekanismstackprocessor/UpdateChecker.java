@@ -27,10 +27,9 @@ public class UpdateChecker {
                 .orElse("unknown");
 
         Thread thread = new Thread(() -> {
-            try {
-                HttpClient client = HttpClient.newBuilder()
-                        .connectTimeout(Duration.ofSeconds(10))
-                        .build();
+            try (HttpClient client = HttpClient.newBuilder()
+                    .connectTimeout(Duration.ofSeconds(10))
+                    .build()) {
 
                 HttpRequest request = HttpRequest.newBuilder()
                         .uri(URI.create(UPDATE_URL))
