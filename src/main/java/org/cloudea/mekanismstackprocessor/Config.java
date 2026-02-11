@@ -7,6 +7,7 @@ public class Config {
     public static final ModConfigSpec SPEC;
 
     public static final ModConfigSpec.BooleanValue enableOptimization;
+    public static final ModConfigSpec.BooleanValue enableUpdateCheck;
 
     // Factory tier multipliers
     public static final ModConfigSpec.IntValue basicTierMultiplier;
@@ -29,6 +30,10 @@ public class Config {
         enableOptimization = BUILDER
                 .comment("Enable batch processing optimization for Mekanism machines")
                 .define("enableOptimization", true);
+
+        enableUpdateCheck = BUILDER
+                .comment("Enable automatic update checking on startup")
+                .define("enableUpdateCheck", true);
 
         BUILDER.pop();
 
