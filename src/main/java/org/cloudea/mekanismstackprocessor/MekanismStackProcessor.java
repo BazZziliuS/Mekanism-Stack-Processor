@@ -8,6 +8,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.slf4j.Logger;
@@ -20,13 +21,16 @@ public class MekanismStackProcessor {
     public MekanismStackProcessor(IEventBus modEventBus, ModContainer modContainer) {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        if (Config.enableUpdateCheck.get()) {
-            UpdateChecker.check();
-        }
-
+        modEventBus.addListener(this::onLoadComplete);
         NeoForge.EVENT_BUS.register(this);
 
         LOGGER.info("Mekanism Stack Processor initialized");
+    }
+
+    private void onLoadComplete(FMLLoadCompleteEvent event) {
+        if (Config.enableUpdateCheck.get()) {
+            UpdateChecker.check();
+        }
     }
 
     @SubscribeEvent
