@@ -1,0 +1,81 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  MINECRAFT_VERSION: 1.21.1
+  JAVA_VERSION: 21
+  MOD_NAME: Mekanism Stack Processor
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Publish to Modrinth & CurseForge
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          # Modrinth
+          modrinth-id: ${{ secrets.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-featured: true
+
+          # CurseForge
+          curseforge-id: ${{ secrets.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          # GitHub
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-generate-changelog: true
+
+          # Common
+          name: ${{ env.MOD_NAME }} v${{ steps.get_version.outputs.VERSION }}
+          version: ${{ steps.get_version.outputs.VERSION }}
+          version-type: release
+          changelog-file: LATEST_CHANGELOG.md
+
+          loaders: |
+            neoforge
+          game-versions: |
+            ${{ env.MINECRAFT_VERSION }}
+
+          dependencies: |
+            mekanism(required){modrinth:mekanism}{curseforge:268560}
+            mekmm(optional){modrinth:mekanismmoremachine}{curseforge:1275257}
+
+          files: build/libs/!(*-sources).jar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MekanismStackProcessor-${{ steps.get_version.outputs.VERSION }}
+          path: build/libs/*.jar

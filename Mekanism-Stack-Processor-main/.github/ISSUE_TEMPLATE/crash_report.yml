@@ -1,0 +1,130 @@
+name: Crash Report
+description: Report a game crash
+title: "[Crash]: "
+labels: ["bug", "crash"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a crash! Please provide as much information as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Crash Description
+      description: What were you doing when the crash occurred?
+      placeholder: The game crashed when I...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this crash?
+      placeholder: |
+        1. Open game
+        2. Place machine
+        3. Game crashes
+    validations:
+      required: false
+
+  - type: dropdown
+    id: crash-type
+    attributes:
+      label: Crash Type
+      options:
+        - Game crash to desktop
+        - Server crash
+        - Freeze/Hang (not responding)
+        - Chunk loading crash
+        - World corruption
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Reproducible?
+      options:
+        - Always (100%)
+        - Often (>50%)
+        - Sometimes (<50%)
+        - Rare (happened once)
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod Version
+      placeholder: "1.2.0"
+    validations:
+      required: true
+
+  - type: input
+    id: mc-version
+    attributes:
+      label: Minecraft Version
+      placeholder: "1.21.1"
+    validations:
+      required: true
+
+  - type: input
+    id: forge-version
+    attributes:
+      label: NeoForge Version
+      placeholder: "21.1.218"
+    validations:
+      required: true
+
+  - type: input
+    id: mekanism-version
+    attributes:
+      label: Mekanism Version
+      placeholder: "10.7.17"
+    validations:
+      required: true
+
+  - type: input
+    id: java-version
+    attributes:
+      label: Java Version
+      placeholder: "21"
+    validations:
+      required: true
+
+  - type: textarea
+    id: crash-log
+    attributes:
+      label: Crash Log
+      description: |
+        Paste the crash report here or link to pastebin/gist.
+        Located in `.minecraft/crash-reports/` or `logs/latest.log`
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: mod-list
+    attributes:
+      label: Mod List
+      description: List all installed mods (or screenshot of mods folder)
+      placeholder: |
+        - Mekanism 10.7.17
+        - JEI
+        - etc.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have included the full crash log
+          required: true
+        - label: I have tested with only Mekanism + this mod to verify the issue
+          required: false
+        - label: I am using the latest version of the mod
+          required: true
