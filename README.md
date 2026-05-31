@@ -18,6 +18,7 @@ A NeoForge mod that adds **batch processing** to Mekanism machines. Instead of p
 - **Works with all factory types** - Crushing, Enriching, Smelting, Combining, Sawing, Injecting, Infusing, Purifying
 - **Regular machines support** - Non-factory machines also get batch processing
 - **Optional MoreMachine integration** - Full support for Mekanism:MoreMachine mod
+- **Optional Evolved Mekanism integration** - Full support for Evolved Mekanism mod
 
 ## Supported Machines
 
@@ -36,6 +37,10 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 **mekmm module** (uses `factory_tiers`):
 - Lathe, Rolling Mill, Recycling, Stamping, Planting, Replicating factories
 
+
+**Evolved Mekanism** (uses `high tiers compatibility`)
+- Fully Conpatible with Overclocked, quantum, dense and multiversal tiers
+
 **mekaf module** (uses `chemical_factory_tiers`):
 - Liquefying, Dissolving, Oxidizing, Crystallizing, Washing
 - Centrifuging, Chemical Infusing, Pressurized Reacting
@@ -46,23 +51,33 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 ### Item Factories (`factory_tiers`)
 | Tier | Items per Operation |
 |------|---------------------|
-| Basic | 8 |
-| Advanced | 16 |
-| Elite | 32 |
-| Ultimate | 64 |
+| Basic | 1 |
+| Advanced | 2 |
+| Elite | 3 |
+| Ultimate | 4 |
+| Overclocked | 8 |
+| Quantum | 16 |
+| Dense | 32 |
+| Multiversal | 64 |
+| Creative | 64 |
 
 ### Chemical Factories (`chemical_factory_tiers`)
 | Tier | Operations Multiplier |
 |------|----------------------|
 | Basic | 1 |
-| Advanced | 4 |
-| Elite | 8 |
-| Ultimate | 16 |
+| Advanced | 2 |
+| Elite | 3 |
+| Ultimate | 4 |
+| Overclocked | 8 |
+| Quantum | 16 |
+| Dense | 32 |
+| Multiversal | 64 |
+| Creative | 64 |
 
 ### Regular Machines
 | Type | Items per Operation |
 |------|---------------------|
-| Non-factory machines | 4 |
+| Non-factory machines | 1 |
 
 ## Requirements
 
@@ -70,6 +85,7 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 - NeoForge 21.1.0+
 - Mekanism 10.7.17+
 - Mekanism:MoreMachine (optional)
+- Evolved Mekanism (optional)
 
 ## Installation
 
@@ -94,13 +110,23 @@ config/mekanismstackprocessor-common.toml
 - `advancedTierMultiplier` - Items per operation for Advanced Factory
 - `eliteTierMultiplier` - Items per operation for Elite Factory
 - `ultimateTierMultiplier` - Items per operation for Ultimate Factory
-
+- `OverclockedTierMultiplier` - Items per operation for Overclocked Factory
+- `QuantumTierMultiplier` - Items per operation for Quantum Factory
+- `DenseTierMultiplier` - Items per operation for Dense Factory
+- `MultiversalTierMultiplier` - Items per operation for Multiversal Factory
+- `CreativeTierMultiplier` - Items per operation for Creative Factory
+  
 ### Chemical Factory Tiers (gas/fluid processing)
 - `chemBasicTierMultiplier` - Multiplier for Basic Chemical Factory
 - `chemAdvancedTierMultiplier` - Multiplier for Advanced Chemical Factory
 - `chemEliteTierMultiplier` - Multiplier for Elite Chemical Factory
 - `chemUltimateTierMultiplier` - Multiplier for Ultimate Chemical Factory
-
+- `chemOverclockedTierMultiplier` - Multiplier for Overclocked Chemical Factory
+- `chemQuantumTierMultiplier` - Multiplier for Quantum Chemical Factory
+- `chemDenseTierMultiplier` - Multiplier for Dense Chemical Factory
+- `chemMultiversalTierMultiplier` - Multiplier for Multiversal Chemical Factory
+- `chemCreativeTierMultiplier` - Multiplier for Creative Chemical Factory
+  
 ### Regular Machines
 - `baseMachineMultiplier` - Items per operation for regular machines
 
@@ -121,6 +147,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Credits
 
 - **Author:** BazZziliuS
+- **Colaborator:** CaioD
 - **Mekanism Team** for the amazing tech mod
 - **NeoForge Team** for the modding platform
 - **MoreMachine Team** for the extended machines
+- **Iglee42** for the new machines tier
