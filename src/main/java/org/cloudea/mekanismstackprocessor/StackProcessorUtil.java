@@ -4,34 +4,43 @@ import mekanism.common.tier.FactoryTier;
 import mekanism.common.tile.factory.TileEntityFactory;
 
 /**
- * Утилитный класс для расчёта множителей обработки.
+ * Utility class for processing multiplier calculations.
  */
 public class StackProcessorUtil {
 
     /**
-     * Получает operationsPerTick из фабрики.
+     * Gets operationsPerTick from the factory.
      */
     public static int getOperationsPerTick(TileEntityFactory<?> factory) {
         return factory.getOperationsPerTick();
     }
 
     /**
-     * Возвращает множитель для указанного уровня фабрики.
+     * Returns the multiplier for the specified factory tier.
      */
     public static int getFactoryMultiplier(FactoryTier tier) {
         if (!Config.enableOptimization.get()) {
             return 1;
         }
-        return switch (tier) {
-            case BASIC -> Config.basicTierMultiplier.get();
-            case ADVANCED -> Config.advancedTierMultiplier.get();
-            case ELITE -> Config.eliteTierMultiplier.get();
-            case ULTIMATE -> Config.ultimateTierMultiplier.get();
+
+        return switch (tier.name()) {
+            case "BASIC" -> Config.basicTierMultiplier.get();
+            case "ADVANCED" -> Config.advancedTierMultiplier.get();
+            case "ELITE" -> Config.eliteTierMultiplier.get();
+            case "ULTIMATE" -> Config.ultimateTierMultiplier.get();
+
+            case "OVERCLOCKED" -> Config.overclockedTierMultiplier.get();
+            case "QUANTUM" -> Config.quantumTierMultiplier.get();
+            case "DENSE" -> Config.denseTierMultiplier.get();
+            case "MULTIVERSAL" -> Config.multiversalTierMultiplier.get();
+            case "CREATIVE" -> Config.creativeTierMultiplier.get();
+
+            default -> 1;
         };
     }
 
     /**
-     * Возвращает множитель для обычных машин (не фабрик).
+     * Returns the multiplier for regular machines.
      */
     public static int getMachineMultiplier() {
         if (!Config.enableOptimization.get()) {
@@ -41,17 +50,26 @@ public class StackProcessorUtil {
     }
 
     /**
-     * Возвращает множитель для химических фабрик (газы/жидкости) из MoreMachine mekaf.
+     * Returns the multiplier for chemical factories.
      */
     public static int getChemicalFactoryMultiplier(FactoryTier tier) {
         if (!Config.enableOptimization.get()) {
             return 1;
         }
-        return switch (tier) {
-            case BASIC -> Config.chemBasicTierMultiplier.get();
-            case ADVANCED -> Config.chemAdvancedTierMultiplier.get();
-            case ELITE -> Config.chemEliteTierMultiplier.get();
-            case ULTIMATE -> Config.chemUltimateTierMultiplier.get();
+
+        return switch (tier.name()) {
+            case "BASIC" -> Config.chemBasicTierMultiplier.get();
+            case "ADVANCED" -> Config.chemAdvancedTierMultiplier.get();
+            case "ELITE" -> Config.chemEliteTierMultiplier.get();
+            case "ULTIMATE" -> Config.chemUltimateTierMultiplier.get();
+
+            case "OVERCLOCKED" -> Config.chemOverclockedTierMultiplier.get();
+            case "QUANTUM" -> Config.chemQuantumTierMultiplier.get();
+            case "DENSE" -> Config.chemDenseTierMultiplier.get();
+            case "MULTIVERSAL" -> Config.chemMultiversalTierMultiplier.get();
+            case "CREATIVE" -> Config.chemCreativeTierMultiplier.get();
+
+            default -> 1;
         };
     }
 }
