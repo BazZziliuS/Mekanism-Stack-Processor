@@ -71,6 +71,7 @@ jobs:
           dependencies: |
             mekanism(required){modrinth:mekanism}{curseforge:268560}
             mekmm(optional){modrinth:mekanismmoremachine}{curseforge:1275257}
+            evolvedmekanism(optional){modrinth:evolved-mekanism}{curseforge:1230085}
 
           files: build/libs/!(*-sources).jar
 
