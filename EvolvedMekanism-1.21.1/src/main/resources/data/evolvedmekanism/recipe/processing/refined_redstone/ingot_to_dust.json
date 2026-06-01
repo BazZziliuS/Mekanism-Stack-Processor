@@ -1,0 +1,9 @@
+{
+    "type": "mekanism:crushing",
+    "input": {
+        "tag": "c:ingots/refined_redstone"
+    },
+    "output": {
+        "id": "minecraft:redstone"
+    }
+}

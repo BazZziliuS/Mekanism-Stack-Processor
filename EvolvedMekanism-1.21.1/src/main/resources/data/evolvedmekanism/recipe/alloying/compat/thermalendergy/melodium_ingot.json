@@ -1,0 +1,25 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "amount": 4,
+    "item": "minecraft:chorus_fruit"
+  },
+  "second_extra_input": {
+    "amount": 4,
+    "tag": "c:gems/amethyst"
+  },
+  "main_input": {
+    "amount": 2,
+    "tag": "c:ingots/gold"
+  },
+  "output": {
+    "id": "thermalendergy:melodium_ingot",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "thermalendergy"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "amount": 3,
+    "tag": "c:dusts/prismarine"
+  },
+  "second_extra_input": {
+    "tag": "c:gems/prismarine"
+  },
+  "main_input": {
+    "amount": 2,
+    "tag": "c:ingots/nickel"
+  },
+  "output": {
+    "id": "thermalendergy:prismalium_ingot",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "thermalendergy"
+    }
+  ]
+}

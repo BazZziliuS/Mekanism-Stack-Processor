@@ -1,0 +1,24 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "amount": 3,
+    "tag": "c:ingots/lead"
+  },
+  "second_extra_input": {
+    "amount": 2,
+    "tag": "c:ender_pearls"
+  },
+  "main_input": {
+    "tag": "c:dusts/diamond"
+  },
+  "output": {
+    "id": "thermal:enderium_ingot",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "thermal"
+    }
+  ]
+}

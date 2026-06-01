@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_shovel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_shovel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_shovel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_shovel",
+      "required": false
+    }
+  ]
+}

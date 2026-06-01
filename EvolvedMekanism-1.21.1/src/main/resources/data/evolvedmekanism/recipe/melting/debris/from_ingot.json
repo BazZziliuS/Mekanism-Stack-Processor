@@ -1,0 +1,10 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "item": "minecraft:netherite_scrap"
+  },
+  "output": {
+    "tag": "c:molten_debris",
+    "amount": 90
+  }
+}

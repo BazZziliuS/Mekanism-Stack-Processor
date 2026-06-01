@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:ingots/iron"
+  },
+  "second_extra_input": {
+    "tag": "c:dusts/coal"
+  },
+  "main_input": {
+    "tag": "c:obsidians"
+  },
+  "output": {
+    "id": "enderio:dark_steel_ingot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
+}

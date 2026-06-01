@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_leggings",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_leggings",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_leggings",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_leggings",
+      "required": false
+    }
+  ]
+}

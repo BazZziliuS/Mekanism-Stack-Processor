@@ -1,0 +1,24 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "minecraft:beetroot"
+  },
+  "second_extra_input": {
+    "amount": 6,
+    "item": "minecraft:egg"
+  },
+  "main_input": {
+    "amount": 3,
+    "item": "minecraft:clay_ball"
+  },
+  "output": {
+    "id": "minecraft:red_dye",
+    "count": 12
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
+}

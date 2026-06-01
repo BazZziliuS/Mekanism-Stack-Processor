@@ -1,0 +1,39 @@
+{
+  "feature": "evolvedmekanism:ore_noctis",
+  "placement": [
+    {
+      "type": "evolvedmekanism:disableable",
+      "ore_type": {
+        "type": "noctis_rozuli",
+        "index": 0
+      },
+      "retro_gen": false
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "evolvedmekanism:configurable_constant",
+        "ore_type": {
+          "type": "noctis_rozuli",
+          "index": 0
+        }
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "evolvedmekanism:configurable",
+        "ore_type": {
+          "type": "noctis_rozuli",
+          "index": 0
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
