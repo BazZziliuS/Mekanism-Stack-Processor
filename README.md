@@ -18,6 +18,7 @@ A NeoForge mod that adds **batch processing** to Mekanism machines. Instead of p
 - **Works with all factory types** - Crushing, Enriching, Smelting, Combining, Sawing, Injecting, Infusing, Purifying
 - **Regular machines support** - Non-factory machines also get batch processing
 - **Optional MoreMachine integration** - Full support for Mekanism:MoreMachine mod
+- **Optional Evolved Mekanism integration** - Full support for Evolved Mekanism machines and extended factory tiers
 
 ## Supported Machines
 
@@ -41,6 +42,18 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 - Centrifuging, Chemical Infusing, Pressurized Reacting
 - Solar Neutron Activating factories
 
+### Evolved Mekanism (Optional)
+If [Evolved Mekanism](https://www.curseforge.com/minecraft/mc-mods/evolved-mekanism) is installed, the following are also supported:
+
+**Factories** (uses `factory_tiers` / `evolved_mekanism_factory_tiers`):
+- Alloying Factory
+
+**Machines** (uses `regular_machines`):
+- Alloyer, Chemixer, Melter, Solidifier
+
+**Extended factory tiers** (uses `evolved_mekanism_factory_tiers`):
+- Overclocked, Quantum, Dense, Multiversal, Creative
+
 ## Default Configuration
 
 ### Item Factories (`factory_tiers`)
@@ -59,6 +72,15 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 | Elite | 8 |
 | Ultimate | 16 |
 
+### Evolved Mekanism Factory Tiers (`evolved_mekanism_factory_tiers`)
+| Tier | Items per Operation |
+|------|---------------------|
+| Overclocked | 64 |
+| Quantum | 64 |
+| Dense | 64 |
+| Multiversal | 64 |
+| Creative | 64 |
+
 ### Regular Machines
 | Type | Items per Operation |
 |------|---------------------|
@@ -70,6 +92,7 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 - NeoForge 21.1.0+
 - Mekanism 10.7.17+
 - Mekanism:MoreMachine (optional)
+- Evolved Mekanism (optional)
 
 ## Installation
 
@@ -77,7 +100,8 @@ If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-
 2. Place the JAR file in your `mods` folder
 3. Make sure Mekanism is installed
 4. (Optional) Install Mekanism:MoreMachine for extended support
-5. Launch the game!
+5. (Optional) Install Evolved Mekanism for extended support
+6. Launch the game!
 
 ## Configuration
 
@@ -100,6 +124,13 @@ config/mekanismstackprocessor-common.toml
 - `chemAdvancedTierMultiplier` - Multiplier for Advanced Chemical Factory
 - `chemEliteTierMultiplier` - Multiplier for Elite Chemical Factory
 - `chemUltimateTierMultiplier` - Multiplier for Ultimate Chemical Factory
+
+### Evolved Mekanism Factory Tiers
+- `emOverclockedTierMultiplier` - Items per operation for Overclocked tier
+- `emQuantumTierMultiplier` - Items per operation for Quantum tier
+- `emDenseTierMultiplier` - Items per operation for Dense tier
+- `emMultiversalTierMultiplier` - Items per operation for Multiversal tier
+- `emCreativeTierMultiplier` - Items per operation for Creative tier
 
 ### Regular Machines
 - `baseMachineMultiplier` - Items per operation for regular machines
@@ -124,3 +155,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Mekanism Team** for the amazing tech mod
 - **NeoForge Team** for the modding platform
 - **MoreMachine Team** for the extended machines
+- **Evolved Mekanism Team** for the extended machines and tiers
