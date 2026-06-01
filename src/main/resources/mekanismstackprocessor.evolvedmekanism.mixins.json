@@ -1,0 +1,19 @@
+{
+  "required": false,
+  "minVersion": "0.8.5",
+  "package": "org.cloudea.mekanismstackprocessor.mixin.evolvedmekanism",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "mekanismstackprocessor.refmap.json",
+  "plugin": "org.cloudea.mekanismstackprocessor.mixin.EvolvedMekanismMixinPlugin",
+  "priority": 1500,
+  "mixins": [
+    "AlloyingFactoryMixin",
+    "AlloyerMachineMixin",
+    "ChemixerMachineMixin",
+    "MelterMachineMixin",
+    "SolidifierMachineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

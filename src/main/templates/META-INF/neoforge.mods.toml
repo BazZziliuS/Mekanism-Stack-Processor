@@ -20,6 +20,11 @@ Machines process multiple items per operation based on tier:
 Optional integration with Mekanism:MoreMachine (mekmm) - if installed,
 MoreMachine factories will also get batch processing support.
 
+Optional integration with Evolved Mekanism (evolvedmekanism) - if installed,
+Alloying Factory and machines (Alloyer, Chemixer, Melter, Solidifier) will also
+get batch processing support, including support for extended factory tiers
+(Overclocked, Quantum, Dense, Multiversal, Creative).
+
 All values configurable in config/mekanismstackprocessor-common.toml
 '''
 
@@ -28,6 +33,9 @@ config="${mod_id}.mixins.json"
 
 [[mixins]]
 config="${mod_id}.moremachine.mixins.json"
+
+[[mixins]]
+config="${mod_id}.evolvedmekanism.mixins.json"
 
 [[dependencies.${mod_id}]]
 modId="neoforge"
@@ -55,6 +63,14 @@ side="BOTH"
 modId="mekmm"
 type="optional"
 reason="Optional integration for MoreMachine factories batch processing"
+versionRange="[1.0.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="evolvedmekanism"
+type="optional"
+reason="Optional integration for Evolved Mekanism machines batch processing"
 versionRange="[1.0.0,)"
 ordering="AFTER"
 side="BOTH"

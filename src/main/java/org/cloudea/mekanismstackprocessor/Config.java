@@ -24,6 +24,13 @@ public class Config {
     public static final ModConfigSpec.IntValue chemEliteTierMultiplier;
     public static final ModConfigSpec.IntValue chemUltimateTierMultiplier;
 
+    // Evolved Mekanism extended factory tier multipliers
+    public static final ModConfigSpec.IntValue emOverclockedTierMultiplier;
+    public static final ModConfigSpec.IntValue emQuantumTierMultiplier;
+    public static final ModConfigSpec.IntValue emDenseTierMultiplier;
+    public static final ModConfigSpec.IntValue emMultiversalTierMultiplier;
+    public static final ModConfigSpec.IntValue emCreativeTierMultiplier;
+
     static {
         BUILDER.comment("Mekanism Stack Processor Configuration").push("general");
 
@@ -89,6 +96,32 @@ public class Config {
         chemUltimateTierMultiplier = BUILDER
                 .comment("Ultimate Chemical Factory - operations per tick multiplier")
                 .defineInRange("chemUltimateTierMultiplier", 16, 1, 64);
+
+        BUILDER.pop();
+
+        BUILDER.comment("Evolved Mekanism Factory Tier Multipliers",
+                "For the extended factory tiers added by Evolved Mekanism.",
+                "These apply to all factories (Alloying, Crushing, Enriching, etc.) when using EM tiers.").push("evolved_mekanism_factory_tiers");
+
+        emOverclockedTierMultiplier = BUILDER
+                .comment("Overclocked tier - items per operation")
+                .defineInRange("emOverclockedTierMultiplier", 64, 1, 64);
+
+        emQuantumTierMultiplier = BUILDER
+                .comment("Quantum tier - items per operation")
+                .defineInRange("emQuantumTierMultiplier", 64, 1, 64);
+
+        emDenseTierMultiplier = BUILDER
+                .comment("Dense tier - items per operation")
+                .defineInRange("emDenseTierMultiplier", 64, 1, 64);
+
+        emMultiversalTierMultiplier = BUILDER
+                .comment("Multiversal tier - items per operation")
+                .defineInRange("emMultiversalTierMultiplier", 64, 1, 64);
+
+        emCreativeTierMultiplier = BUILDER
+                .comment("Creative tier - items per operation")
+                .defineInRange("emCreativeTierMultiplier", 64, 1, 64);
 
         BUILDER.pop();
 

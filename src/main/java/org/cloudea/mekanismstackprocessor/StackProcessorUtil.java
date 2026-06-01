@@ -17,6 +17,7 @@ public class StackProcessorUtil {
 
     /**
      * Возвращает множитель для указанного уровня фабрики.
+     * Поддерживает стандартные тайры Mekanism и расширенные тайры Evolved Mekanism.
      */
     public static int getFactoryMultiplier(FactoryTier tier) {
         if (!Config.enableOptimization.get()) {
@@ -27,6 +28,18 @@ public class StackProcessorUtil {
             case ADVANCED -> Config.advancedTierMultiplier.get();
             case ELITE -> Config.eliteTierMultiplier.get();
             case ULTIMATE -> Config.ultimateTierMultiplier.get();
+            default -> getEMTierMultiplierByName(tier.name());
+        };
+    }
+
+    private static int getEMTierMultiplierByName(String name) {
+        return switch (name) {
+            case "OVERCLOCKED" -> Config.emOverclockedTierMultiplier.get();
+            case "QUANTUM" -> Config.emQuantumTierMultiplier.get();
+            case "DENSE" -> Config.emDenseTierMultiplier.get();
+            case "MULTIVERSAL" -> Config.emMultiversalTierMultiplier.get();
+            case "CREATIVE" -> Config.emCreativeTierMultiplier.get();
+            default -> 1;
         };
     }
 
@@ -42,6 +55,7 @@ public class StackProcessorUtil {
 
     /**
      * Возвращает множитель для химических фабрик (газы/жидкости) из MoreMachine mekaf.
+     * Поддерживает стандартные тайры Mekanism и расширенные тайры Evolved Mekanism.
      */
     public static int getChemicalFactoryMultiplier(FactoryTier tier) {
         if (!Config.enableOptimization.get()) {
@@ -52,6 +66,7 @@ public class StackProcessorUtil {
             case ADVANCED -> Config.chemAdvancedTierMultiplier.get();
             case ELITE -> Config.chemEliteTierMultiplier.get();
             case ULTIMATE -> Config.chemUltimateTierMultiplier.get();
+            default -> getEMTierMultiplierByName(tier.name());
         };
     }
 }
