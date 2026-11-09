@@ -2,8 +2,8 @@
 
 [![Build](https://github.com/BazZziliuS/Mekanism-Stack-Processor/actions/workflows/build.yml/badge.svg)](https://github.com/BazZziliuS/Mekanism-Stack-Processor/actions/workflows/build.yml)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-green.svg)](https://minecraft.net/)
-[![NeoForge](https://img.shields.io/badge/NeoForge-21.1.218-orange.svg)](https://neoforged.net/)
-[![Mekanism](https://img.shields.io/badge/Mekanism-10.7.17+-blue.svg)](https://github.com/mekanism/Mekanism)
+[![NeoForge](https://img.shields.io/badge/NeoForge-21.1.256-orange.svg)](https://neoforged.net/)
+[![Mekanism](https://img.shields.io/badge/Mekanism-10.7.19+-blue.svg)](https://github.com/mekanism/Mekanism)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [![Modrinth](https://img.shields.io/modrinth/dt/mekanism-stack-processor?logo=modrinth&label=Modrinth&color=00AF5C)](https://modrinth.com/mod/mekanism-stack-processor)
@@ -35,12 +35,11 @@ A NeoForge mod that adds **batch processing** to Mekanism machines. Instead of p
 If [Mekanism:MoreMachine](https://www.curseforge.com/minecraft/mc-mods/mekanism-more-machine) is installed, the following factories are also supported:
 
 **mekmm module** (uses `factory_tiers`):
-- Lathe, Rolling Mill, Recycling, Stamping, Planting, Replicating factories
+- Lathe, Rolling Mill, Recycling, Stamping, Planting, Pressing, Replicating factories
 
 **mekaf module** (uses `chemical_factory_tiers`):
-- Liquefying, Dissolving, Oxidizing, Crystallizing, Washing
-- Centrifuging, Chemical Infusing, Pressurized Reacting
-- Solar Neutron Activating factories
+- Liquefying, Dissolving, Oxidizing, Pigment Extracting, Crystallizing, Washing
+- Centrifuging, Painting, Pressurized Reacting factories
 
 ### Evolved Mekanism (Optional)
 If [Evolved Mekanism](https://www.curseforge.com/minecraft/mc-mods/evolved-mekanism) is installed, the following are also supported:
@@ -49,7 +48,7 @@ If [Evolved Mekanism](https://www.curseforge.com/minecraft/mc-mods/evolved-mekan
 - Alloying Factory
 
 **Machines** (uses `regular_machines`):
-- Alloyer, Chemixer, Melter, Solidifier
+- Alloyer, Chemixer, Melter, Solidifier, Fluid Alloyer, Fluid Combiner
 
 **Extended factory tiers** (uses `evolved_mekanism_factory_tiers`):
 - Overclocked, Quantum, Dense, Multiversal, Creative
@@ -90,9 +89,9 @@ If [Evolved Mekanism](https://www.curseforge.com/minecraft/mc-mods/evolved-mekan
 
 - Minecraft 1.21.1
 - NeoForge 21.1.0+
-- Mekanism 10.7.17+
-- Mekanism:MoreMachine (optional)
-- Evolved Mekanism (optional)
+- Mekanism 10.7.19+
+- Mekanism:MoreMachine 1.4.2+ (optional)
+- Evolved Mekanism 1.3.0+ (optional)
 
 ## Installation
 

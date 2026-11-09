@@ -1,7 +1,10 @@
 package org.cloudea.mekanismstackprocessor;
 
+import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.common.tier.FactoryTier;
-import mekanism.common.tile.factory.TileEntityFactory;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.function.IntSupplier;
 
 /**
  * Утилитный класс для расчёта множителей обработки.
@@ -9,10 +12,23 @@ import mekanism.common.tile.factory.TileEntityFactory;
 public class StackProcessorUtil {
 
     /**
-     * Получает operationsPerTick из фабрики.
+     * Умножает количество операций рецепта на множитель.
+     *
+     * @param cached            кэшированный рецепт, созданный машиной
+     * @param multiplier        множитель обработки
+     * @param operationsPerTick базовое количество операций в тик
      */
-    public static int getOperationsPerTick(TileEntityFactory<?> factory) {
-        return factory.getOperationsPerTick();
+    public static void applyBatch(@Nullable CachedRecipe<?> cached, int multiplier, IntSupplier operationsPerTick) {
+        if (cached != null && multiplier > 1) {
+            cached.setBaselineMaxOperations(() -> operationsPerTick.getAsInt() * multiplier);
+        }
+    }
+
+    /**
+     * Применяет множитель обычных машин (не фабрик).
+     */
+    public static void applyMachineBatch(@Nullable CachedRecipe<?> cached) {
+        applyBatch(cached, getMachineMultiplier(), () -> 1);
     }
 
     /**

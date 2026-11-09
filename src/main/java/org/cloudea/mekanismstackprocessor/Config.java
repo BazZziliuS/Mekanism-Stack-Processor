@@ -3,6 +3,9 @@ package org.cloudea.mekanismstackprocessor;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class Config {
+    private static final int MIN_MULTIPLIER = 1;
+    private static final int MAX_MULTIPLIER = 64;
+
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     public static final ModConfigSpec SPEC;
 
@@ -48,30 +51,17 @@ public class Config {
                 "How many items each factory tier processes per operation.",
                 "Higher tier = more items processed at once.").push("factory_tiers");
 
-        basicTierMultiplier = BUILDER
-                .comment("Basic Factory - items per operation")
-                .defineInRange("basicTierMultiplier", 8, 1, 64);
-
-        advancedTierMultiplier = BUILDER
-                .comment("Advanced Factory - items per operation")
-                .defineInRange("advancedTierMultiplier", 16, 1, 64);
-
-        eliteTierMultiplier = BUILDER
-                .comment("Elite Factory - items per operation")
-                .defineInRange("eliteTierMultiplier", 32, 1, 64);
-
-        ultimateTierMultiplier = BUILDER
-                .comment("Ultimate Factory - items per operation (max stack!)")
-                .defineInRange("ultimateTierMultiplier", 64, 1, 64);
+        basicTierMultiplier = defineMultiplier("basicTierMultiplier", 8, "Basic Factory - items per operation");
+        advancedTierMultiplier = defineMultiplier("advancedTierMultiplier", 16, "Advanced Factory - items per operation");
+        eliteTierMultiplier = defineMultiplier("eliteTierMultiplier", 32, "Elite Factory - items per operation");
+        ultimateTierMultiplier = defineMultiplier("ultimateTierMultiplier", 64, "Ultimate Factory - items per operation (max stack!)");
 
         BUILDER.pop();
 
         BUILDER.comment("Regular Machine Settings",
                 "For non-factory machines like Crusher, Enrichment Chamber, etc.").push("regular_machines");
 
-        baseMachineMultiplier = BUILDER
-                .comment("Items per operation for regular machines")
-                .defineInRange("baseMachineMultiplier", 4, 1, 64);
+        baseMachineMultiplier = defineMultiplier("baseMachineMultiplier", 4, "Items per operation for regular machines");
 
         BUILDER.pop();
 
@@ -81,21 +71,10 @@ public class Config {
                 "- MoreMachine mekaf: Dissolving, Liquefying, Oxidizing, etc.",
                 "Higher tier = more chemicals processed at once.").push("chemical_factory_tiers");
 
-        chemBasicTierMultiplier = BUILDER
-                .comment("Basic Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemBasicTierMultiplier", 1, 1, 64);
-
-        chemAdvancedTierMultiplier = BUILDER
-                .comment("Advanced Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemAdvancedTierMultiplier", 4, 1, 64);
-
-        chemEliteTierMultiplier = BUILDER
-                .comment("Elite Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemEliteTierMultiplier", 8, 1, 64);
-
-        chemUltimateTierMultiplier = BUILDER
-                .comment("Ultimate Chemical Factory - operations per tick multiplier")
-                .defineInRange("chemUltimateTierMultiplier", 16, 1, 64);
+        chemBasicTierMultiplier = defineMultiplier("chemBasicTierMultiplier", 1, "Basic Chemical Factory - operations per tick multiplier");
+        chemAdvancedTierMultiplier = defineMultiplier("chemAdvancedTierMultiplier", 4, "Advanced Chemical Factory - operations per tick multiplier");
+        chemEliteTierMultiplier = defineMultiplier("chemEliteTierMultiplier", 8, "Elite Chemical Factory - operations per tick multiplier");
+        chemUltimateTierMultiplier = defineMultiplier("chemUltimateTierMultiplier", 16, "Ultimate Chemical Factory - operations per tick multiplier");
 
         BUILDER.pop();
 
@@ -103,28 +82,18 @@ public class Config {
                 "For the extended factory tiers added by Evolved Mekanism.",
                 "These apply to all factories (Alloying, Crushing, Enriching, etc.) when using EM tiers.").push("evolved_mekanism_factory_tiers");
 
-        emOverclockedTierMultiplier = BUILDER
-                .comment("Overclocked tier - items per operation")
-                .defineInRange("emOverclockedTierMultiplier", 64, 1, 64);
-
-        emQuantumTierMultiplier = BUILDER
-                .comment("Quantum tier - items per operation")
-                .defineInRange("emQuantumTierMultiplier", 64, 1, 64);
-
-        emDenseTierMultiplier = BUILDER
-                .comment("Dense tier - items per operation")
-                .defineInRange("emDenseTierMultiplier", 64, 1, 64);
-
-        emMultiversalTierMultiplier = BUILDER
-                .comment("Multiversal tier - items per operation")
-                .defineInRange("emMultiversalTierMultiplier", 64, 1, 64);
-
-        emCreativeTierMultiplier = BUILDER
-                .comment("Creative tier - items per operation")
-                .defineInRange("emCreativeTierMultiplier", 64, 1, 64);
+        emOverclockedTierMultiplier = defineMultiplier("emOverclockedTierMultiplier", 64, "Overclocked tier - items per operation");
+        emQuantumTierMultiplier = defineMultiplier("emQuantumTierMultiplier", 64, "Quantum tier - items per operation");
+        emDenseTierMultiplier = defineMultiplier("emDenseTierMultiplier", 64, "Dense tier - items per operation");
+        emMultiversalTierMultiplier = defineMultiplier("emMultiversalTierMultiplier", 64, "Multiversal tier - items per operation");
+        emCreativeTierMultiplier = defineMultiplier("emCreativeTierMultiplier", 64, "Creative tier - items per operation");
 
         BUILDER.pop();
 
         SPEC = BUILDER.build();
+    }
+
+    private static ModConfigSpec.IntValue defineMultiplier(String key, int defaultValue, String comment) {
+        return BUILDER.comment(comment).defineInRange(key, defaultValue, MIN_MULTIPLIER, MAX_MULTIPLIER);
     }
 }

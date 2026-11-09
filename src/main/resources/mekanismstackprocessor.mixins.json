@@ -6,10 +6,8 @@
   "refmap": "mekanismstackprocessor.refmap.json",
   "priority": 1500,
   "mixins": [
-    "ItemStackToItemStackFactoryMixin",
-    "CombiningFactoryMixin",
-    "ItemStackChemicalToItemStackFactoryMixin",
-    "SawingFactoryMixin",
+    "ItemFactoryMixin",
+    "ChemicalFactoryMixin",
     "ElectricMachineMixin"
   ],
   "injectors": {

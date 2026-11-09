@@ -8,10 +8,7 @@
   "priority": 1500,
   "mixins": [
     "AlloyingFactoryMixin",
-    "AlloyerMachineMixin",
-    "ChemixerMachineMixin",
-    "MelterMachineMixin",
-    "SolidifierMachineMixin"
+    "EvolvedMachineMixin"
   ],
   "injectors": {
     "defaultRequire": 1
